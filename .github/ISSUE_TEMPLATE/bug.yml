@@ -1,7 +1,7 @@
 name: Bug Report
-description: 발견한 버그 제보(나중에 Fix 이슈로 연결)
-title: "[Bug] 요약"
-labels: ["bug"]
+description: 발견한 버그 제보
+title: '[Bug] 요약'
+labels: ['bug']
 body:
   - type: textarea
     id: steps
