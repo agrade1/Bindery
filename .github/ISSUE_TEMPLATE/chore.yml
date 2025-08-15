@@ -1,0 +1,18 @@
+name: Chore
+description: 환경설정/문서/빌드 등 유지보수 작업
+title: "[Chore] 요약"
+labels: ["chore"]
+body:
+  - type: textarea
+    id: why
+    attributes: { label: 배경, placeholder: 왜 필요한가 한두 줄 }
+  - type: checkboxes
+    id: tasks
+    attributes:
+      label: 해야 할 일
+      options:
+        - { label: 설정 파일 수정 }
+        - { label: 스크립트/도구 업데이트 }
+  - type: textarea
+    id: done
+    attributes: { label: 완료 기준, placeholder: 완료 확인 포인트 }

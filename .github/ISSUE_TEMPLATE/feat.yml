@@ -1,0 +1,19 @@
+name: Feat
+description: 새로운 기능/화면 추가
+title: "[Feat/<Scope>] 요약"
+labels: ["feat"]
+body:
+  - type: textarea
+    id: goal
+    attributes: { label: 목표, placeholder: 무엇을 추가하는가 }
+  - type: checkboxes
+    id: tasks
+    attributes:
+      label: 해야 할 일
+      options:
+        - { label: 마크업/UI }
+        - { label: 상태(Zustand) }
+        - { label: 스타일(Tailwind) }
+  - type: textarea
+    id: done
+    attributes: { label: 완료 기준, placeholder: 동작/반응형/접근성 등 }
