@@ -1,0 +1,17 @@
+name: Bug Report
+description: 발견한 버그 제보(나중에 Fix 이슈로 연결)
+title: "[Bug] 요약"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: steps
+    attributes: { label: 재현 절차, placeholder: 1) ... 2) ... }
+  - type: input
+    id: env
+    attributes: { label: 환경, placeholder: OS/브라우저/버전 }
+  - type: textarea
+    id: actual
+    attributes: { label: 실제 결과 }
+  - type: textarea
+    id: expected
+    attributes: { label: 기대 결과 }
