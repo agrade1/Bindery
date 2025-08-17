@@ -1,21 +1,28 @@
 name: Fix
 description: 버그 수정 이슈(수정 작업용)
 title: '[Fix/<Scope>] 요약'
-labels: ['fix']
+labels:
+  - fix
 body:
   - type: textarea
     id: bug
-    attributes: { label: 문제, placeholder: 무엇이 어떻게 깨지는가 }
+    attributes:
+      label: 문제
+      placeholder: 무엇이 어떻게 깨지는가
   - type: textarea
     id: cause
-    attributes: { label: 원인 추정, placeholder: 로그/코드 포인트 }
+    attributes:
+      label: 원인 추정
+      placeholder: 로그/코드 포인트
   - type: checkboxes
     id: tasks
     attributes:
       label: 해야 할 일
       options:
-        - { label: 재현 → 수정 }
-        - { label: 회귀 테스트 }
+        - label: 재현 → 수정
+        - label: 회귀 테스트
   - type: textarea
     id: done
-    attributes: { label: 완료 기준, placeholder: 재현 불가, 테스트 통과 등 }
+    attributes:
+      label: 완료 기준
+      placeholder: 재현 불가, 테스트 통과 등
