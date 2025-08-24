@@ -6,3 +6,12 @@
     font-family: 'Pretendard Variable', sans-serif;
   }
 }
+.flex-center {
+  @apply flex items-center justify-center;
+}
+.flex-between {
+  @apply flex items-center justify-between;
+}
+.cont-wrap {
+  @apply m-auto max-w-[1440px] px-4;
+}
