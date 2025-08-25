@@ -4,9 +4,15 @@ import MenuList from './MenuList';
 import { useState } from 'react';
 import { BookIcon, ListIcon, ShoppingCartIcon, UserCircleIcon, XIcon } from '@phosphor-icons/react';
 import type { MenuItem } from '@/types/headerTypes';
+import { useOverlay } from '@/context/overlayContext';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { isOverlay, setOverlay } = useOverlay();
+  const moNavOpen = () => {
+    setOpen(!open);
+    setOverlay(!isOverlay);
+  };
   const menus: MenuItem[] = [
     { id: 1, to: '/books', label: 'books', Icon: BookIcon },
     { id: 2, to: '/cart', label: 'cart', Icon: ShoppingCartIcon },
@@ -34,7 +40,7 @@ export default function Header() {
           <button
             type="button"
             className="inline-flex h-full cursor-pointer items-center justify-center rounded-md p-2 md:hidden"
-            onClick={() => setOpen(true)}
+            onClick={() => moNavOpen()}
           >
             <ListIcon size={22} weight="bold" />
           </button>
@@ -47,7 +53,7 @@ export default function Header() {
           <button
             type="button"
             className="mr-4 ml-auto shrink-0 cursor-pointer rounded-md lg:hidden"
-            onClick={() => setOpen(false)}
+            onClick={() => moNavOpen()}
           >
             <XIcon size={22} weight="bold" />
           </button>
