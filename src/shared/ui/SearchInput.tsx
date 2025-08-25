@@ -1,3 +1,4 @@
+import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { useState, type FormEvent } from 'react';
 
 type Props = {
@@ -5,7 +6,7 @@ type Props = {
   placeholder?: string;
 };
 
-export default function SearchInput({ onSearch, placeholder = 'Search products…' }: Props) {
+export default function SearchInput({ onSearch, placeholder = '' }: Props) {
   const [q, setQ] = useState('');
 
   const submit = (e: FormEvent) => {
@@ -16,18 +17,19 @@ export default function SearchInput({ onSearch, placeholder = 'Search products�
   };
 
   return (
-    <form onSubmit={submit} className="relative">
+    <form onSubmit={submit} className="relative w-full max-w-lg">
       <input
-        className="input w-full pl-9"
+        className="w-full rounded-md bg-gray-100 py-3 pr-4 pl-10 text-sm text-gray-700 placeholder-gray-400 transition outline-none focus:bg-white focus:ring-2 focus:ring-emerald-300"
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder={placeholder}
         aria-label="Search"
       />
-      <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-        🔎
-      </span>
-      <img src="" alt="" />
+      <MagnifyingGlassIcon
+        size={20}
+        weight="light"
+        className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
+      />
     </form>
   );
 }
