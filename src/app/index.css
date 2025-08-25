@@ -12,6 +12,9 @@
 .flex-between {
   @apply flex items-center justify-between;
 }
+.flex-end {
+  @apply flex items-center justify-end;
+}
 .cont-wrap {
   @apply m-auto max-w-[1440px] px-4;
 }
