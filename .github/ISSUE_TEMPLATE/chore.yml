@@ -1,7 +1,7 @@
 name: Chore
 description: 환경설정/문서/빌드 등 유지보수 작업
-title: "[Chore] 요약"
-labels: ["chore"]
+title: '[Chore] 요약'
+labels: ['chore']
 body:
   - type: textarea
     id: why
