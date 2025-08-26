@@ -19,7 +19,7 @@ export default function SearchInput({ onSearch, placeholder = '' }: Props) {
   return (
     <form onSubmit={submit} className="relative w-full max-w-lg">
       <input
-        className="w-full rounded-md bg-gray-100 py-3 pr-4 pl-10 text-sm text-gray-700 placeholder-gray-400 transition outline-none focus:bg-white focus:ring-2 focus:ring-emerald-300"
+        className="w-full rounded-md bg-[#f4f1ea] py-3 pr-4 pl-10 text-sm text-gray-700 placeholder-gray-400 transition outline-none focus:bg-white focus:ring-2 focus:ring-[#c73230]"
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder={placeholder}
