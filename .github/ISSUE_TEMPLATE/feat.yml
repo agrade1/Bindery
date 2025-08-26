@@ -1,7 +1,7 @@
 name: Feat
 description: 새로운 기능/화면 추가
-title: "[Feat/<Scope>] 요약"
-labels: ["feat"]
+title: '[Feat/<Scope>] 요약'
+labels: ['feat']
 body:
   - type: textarea
     id: goal
