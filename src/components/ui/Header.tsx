@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import SearchInput from '@/shared/ui/SearchInput';
-import MenuList from './MenuList';
+import SearchInput from '@/components/ui/SearchInput';
 import { useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 import type { MenuItem } from '@/types/headerTypes';
 import { useOverlay } from '@/context/overlayContext';
+import MenuList from '../menu/MenuList';
 
 type Props = { menus: MenuItem[] };
 export default function Header({ menus }: Props) {

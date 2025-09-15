@@ -1,5 +1,5 @@
-import Footer from '@/app/layouts/_components/Footer/Footer';
-import Header from '@/app/layouts/_components/Header/Header';
+import Footer from '@/components/ui/Footer';
+import Header from '@/components/ui/Header';
 import { useOverlay } from '@/context/overlayContext';
 import type { MenuItem } from '@/types/headerTypes';
 import { BookIcon, ShoppingCartIcon, UserCircleIcon } from '@phosphor-icons/react';

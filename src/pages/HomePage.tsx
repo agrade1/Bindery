@@ -1,4 +1,4 @@
-import BookSection from '@/features/books/ui/BookSection';
+import BookSection from '@/components/books/BookSection';
 
 export default function HomePage() {
   return (
