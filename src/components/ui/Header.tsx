@@ -46,7 +46,7 @@ export default function Header({ menus }: Props) {
       </header>
 
       <div
-        className={`bg-whitetransition-transform fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
+        className={`fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 bg-white transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
       >
         <div className="flex-end h-16 border-b px-2">
           <button
