@@ -1,4 +1,4 @@
-import { useQuery, type UseQueryResult } from '@tanstack/react-query';
+import { useQuery, type UseQueryOptions, type UseQueryResult } from '@tanstack/react-query';
 import { ALADIN_KEY } from '@/constants/aladin';
 
 export function useAladinQuery<T>(
@@ -6,6 +6,7 @@ export function useAladinQuery<T>(
   endpoint: string,
   params: Record<string, string | number> = {},
   staleTime: number = 1000 * 60 * 100,
+  options?: Omit<UseQueryOptions<T>, 'queryKey' | 'queryFn'>,
 ): UseQueryResult<T> {
   const searchParams = new URLSearchParams({
     TTBKey: ALADIN_KEY,
@@ -25,5 +26,6 @@ export function useAladinQuery<T>(
       return res.json();
     },
     staleTime,
+    ...options,
   });
 }
