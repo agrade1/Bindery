@@ -17,8 +17,8 @@ export default function Header({ menus }: Props) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#fffbf5]">
-        <nav className="flex-between cont-wrap h-16 gap-4 shadow-[0_4px_14px_0_#00000040]">
+      <header className="sticky top-0 z-40 bg-[#fffbf5] shadow-[0_4px_14px_0_#00000040]">
+        <nav className="flex-between cont-wrap h-16 gap-4">
           <div className="flex-center h-full gap-7">
             <NavLink to="/" className="inline-flex items-center gap-2 text-2xl font-semibold">
               Bindery
@@ -46,7 +46,7 @@ export default function Header({ menus }: Props) {
       </header>
 
       <div
-        className={`fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 bg-white shadow-lg transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
+        className={`bg-whitetransition-transform fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
       >
         <div className="flex-end h-16 border-b px-2">
           <button
