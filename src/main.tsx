@@ -4,11 +4,16 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './routes';
 import { OverlayProvider } from '@/context/overlayContext';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <OverlayProvider>
-      <RouterProvider router={router} />
-    </OverlayProvider>
+    <QueryClientProvider client={queryClient}>
+      <OverlayProvider>
+        <RouterProvider router={router} />
+      </OverlayProvider>
+    </QueryClientProvider>
   </StrictMode>,
 );

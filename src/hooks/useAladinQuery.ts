@@ -1,11 +1,11 @@
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
-import { ALADIN_BASE_URL, ALADIN_KEY } from '@/constants/aladin';
+import { ALADIN_KEY } from '@/constants/aladin';
 
 export function useAladinQuery<T>(
-  key: string[],
+  key: (string | number)[],
   endpoint: string,
   params: Record<string, string | number> = {},
-  staleTime: number = 1000 * 60,
+  staleTime: number = 1000 * 60 * 100,
 ): UseQueryResult<T> {
   const searchParams = new URLSearchParams({
     TTBKey: ALADIN_KEY,
@@ -14,7 +14,8 @@ export function useAladinQuery<T>(
     ...Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)])),
   });
 
-  const url = `${ALADIN_BASE_URL}${endpoint}?${searchParams.toString()}`;
+  // 프록시 경로 사용
+  const url = `/aladin/${endpoint}?${searchParams.toString()}`;
 
   return useQuery<T>({
     queryKey: key,
