@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import SearchInput from '@/components/ui/SearchInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 import type { MenuItem } from '@/types/headerTypes';
 import { useOverlay } from '@/context/overlayContext';
@@ -14,6 +14,17 @@ export default function Header({ menus }: Props) {
     setOpen(!open);
     setOverlay(!isOverlay);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setOpen(false);
+        setOverlay(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setOverlay]);
 
   return (
     <>
@@ -46,7 +57,7 @@ export default function Header({ menus }: Props) {
       </header>
 
       <div
-        className={`bg-whitetransition-transform fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
+        className={`fixed top-0 right-0 z-50 flex h-full w-64 transform flex-col gap-2 bg-white transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}
       >
         <div className="flex-end h-16 border-b px-2">
           <button
@@ -58,9 +69,17 @@ export default function Header({ menus }: Props) {
           </button>
         </div>
         <div className="px-2">
-          <MenuList menus={menus} isMobile={true} />
+          <MenuList menus={menus} isVertical />
         </div>
       </div>
+
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity ${isOverlay ? 'opacity-100 delay-0 duration-300' : 'pointer-events-none opacity-0 delay-150 duration-150'} `}
+        onClick={() => {
+          setOpen(false);
+          setOverlay(false);
+        }}
+      />
     </>
   );
 }
