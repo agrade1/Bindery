@@ -1,4 +1,5 @@
 export type AladinBook = {
+  itemId: string;
   title: string;
   link: string;
   cover: string;
@@ -7,6 +8,8 @@ export type AladinBook = {
   description: string;
   pubDate: string;
   isbn13: string;
+  priceSales: string;
+  priceStandard: string;
 };
 
 export type AladinResponse = {
